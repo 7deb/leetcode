@@ -1,0 +1,17 @@
+.card-oak h5{
+    text-align: left;
+    font-size: 0.8rem;
+    color: white;
+    
+}
+
+.card-oak p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.6rem;
+    text-align: left;
+    color: white;
+    opacity: 0.7;
+
+}
