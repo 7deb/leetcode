@@ -1,0 +1,13 @@
+.navbar{
+    background-color: #282828;
+    border-bottom: 1px solid #464646;
+}
+
+.container{
+    margin: 0 15%;
+}
+
+.nav-link{
+    color: white;
+    opacity: 0.4;
+}
