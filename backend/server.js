@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 
 const databaseConnect = require('./database/db');
 const authRoutes = require('./routers/authRoutes');
+const problemRouter = require('./routers/problemRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/auth/", authRoutes);
+app.use("/api/problems",problemRouter);
 
 databaseConnect();
 app.listen(PORT,()=>{
