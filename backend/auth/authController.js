@@ -5,10 +5,10 @@ const generateToken = require('../utils/genToken');
 const signup = async (req, res) => {
     try {
         // taking user details
-        const { fullName, userName, email, password, confirmedPassword, gender } = req.body;
+        const { userName, email, password, confirmedPassword } = req.body;
 
         //checking if all fields are filled 
-        if (!fullName || !userName || !email || !password || !confirmedPassword || !gender) {
+        if (!fullName || !userName || !email || !password || !confirmedPassword) {
             return res.status(401).json({ error: "all fields are required!!" });
         }
 
@@ -28,11 +28,9 @@ const signup = async (req, res) => {
 
         //updating the user data 
         const newUser = user.create({
-            fullName,
             userName,
             email,
             password: hashedPassword,
-            gender,
         })
 
         //creating the user in the database
@@ -40,10 +38,7 @@ const signup = async (req, res) => {
             generateToken(newUser._id, res);
             return res.status(201).json({
                 _id: newUser._id,
-                fullName: newUser.fullName,
                 userName: newUser.userName,
-                email: newUser.email,
-                gender: newUser.gender,
             });
         } else {
             res.status(400).json({ error: "Invalid user data" });
@@ -74,7 +69,6 @@ const login = async (req, res) => {
 
         return res.status(201).json({
             _id: existinguser._id,
-            fullName: existinguser.fullName,
             username: existinguser.userName,
         })
     }catch(error){

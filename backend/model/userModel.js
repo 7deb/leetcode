@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    fullName: {
-        type: String,
-        required: true,
-    },
     userName: {
         type: String,
         required: true,
@@ -20,11 +16,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6,
     },
-    gender: {
-        type: String,
-        required: true,
-        enum: ["male", "female"],
-    },
+    isPremium: {
+        type: Boolean,
+        default: false,
+    }
 }, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);
