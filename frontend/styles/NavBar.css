@@ -1,0 +1,45 @@
+.navbar{
+    background-color: #282828;
+    border-bottom: 1px solid #464646;
+}
+
+.container{
+    margin: 0 15%;
+}
+
+.nav-link{
+    color: white;
+    opacity: 0.4;
+}
+.nav-link:hover{
+    color: white;
+    opacity: 0.9;
+}
+.premium{
+    background-color: #534024;
+    color: #FF931C;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.store a{
+    color: #FF931C;
+    opacity: 1;
+}
+
+.dropdown div{
+    background-color: #282828;
+}
+
+.interview a{
+    color: white;
+    opacity: 0.4;
+}
+#active{
+    color: white;
+    opacity: 1;
+}
+#profile-pic{
+    opacity: 1;
+    border-radius: 50%;
+}
