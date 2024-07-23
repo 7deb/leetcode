@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Courses from '../components/Courses';
 import StudyPlan from '../components/StudyPlan';
 import TopicList from '../components/TopicList';
+import Calender from '../components/Calender';
 
 const App = () => {
   return (
@@ -16,6 +17,9 @@ const App = () => {
           <Courses/>
           <StudyPlan/>
           <TopicList/>
+        </Col>
+        <Col xs={4}>
+          <Calender/>        
         </Col>
       </Row>
     </Container>
