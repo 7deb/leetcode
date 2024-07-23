@@ -1,0 +1,18 @@
+.collapsible-topic-bar{
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    color: white;
+    display: flex;
+}
+.collapsible-topic-bar div{
+    display: inline;
+    margin: 0 5px 0 5px ;
+}
+.collapsible-topic-bar div div{
+    border-radius: 25px;
+    padding: 0 5px 0 5px;
+    background-color: #3A3A3A;
+    opacity: 0.7;
+    font-size: 0.8rem;
+}

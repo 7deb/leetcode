@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Courses from '../components/Courses';
 import StudyPlan from '../components/StudyPlan';
+import TopicList from '../components/TopicList';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Col xs={8}>
           <Courses/>
           <StudyPlan/>
+          <TopicList/>
         </Col>
       </Row>
     </Container>
