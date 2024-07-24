@@ -6,6 +6,8 @@ import Courses from '../components/Courses';
 import StudyPlan from '../components/StudyPlan';
 import TopicList from '../components/TopicList';
 import Calender from '../components/Calender';
+import TopicList2 from '../components/TopicList2';
+import ProblemList from '../components/ProblemList';
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
           <Courses/>
           <StudyPlan/>
           <TopicList/>
+          <TopicList2/>
+          <ProblemList/>
         </Col>
         <Col xs={4}>
           <Calender/>        

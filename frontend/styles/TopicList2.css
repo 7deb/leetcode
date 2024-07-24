@@ -1,0 +1,17 @@
+.topiclist div{
+    color: white;    
+    opacity: 0.7;
+}
+.topiclist div:hover{
+    opacity: 1;
+}
+.topiclist{
+    display: flex;
+    flex-direction: row;
+}
+.topiclist div{
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 30px;
+}
