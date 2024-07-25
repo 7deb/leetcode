@@ -1,0 +1,23 @@
+.table thead tr th{
+    background-color: #1A1A1A;
+    color: white;
+    opacity: 0.7;
+    font-weight: 400;
+}
+.table tbody tr:nth-of-type(odd) td{
+    background-color: #1A1A1A;
+    color: white;
+    text-align: left;
+    font-weight: 100;
+}
+  
+.table tbody tr:nth-of-type(even) td{
+    background-color: #2A2A2A;
+    color: white;
+    text-align: left;
+    font-weight: 100;
+}
+.table *{
+    border: none;
+}
+  

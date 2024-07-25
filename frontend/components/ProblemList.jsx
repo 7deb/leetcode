@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, Button, Dropdown } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import '../styles/ProblemList.css';
 import Problems from '../DS/Problems';
 import PaginationControls from './PaginationControls';
@@ -44,20 +44,9 @@ const ProblemList = () => {
 
   return (
     <div>
-      {/* <Dropdown className="mb-3">
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Sort by {sortField}
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item onClick={() => handleSort('title')}>Title</Dropdown.Item>
-          <Dropdown.Item onClick={() => handleSort('acceptance')}>Acceptance</Dropdown.Item>
-          <Dropdown.Item onClick={() => handleSort('difficulty')}>Difficulty</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown> */}
       <FilterButtons handleSort={handleSort} sortField={sortField} />
 
-      <Table striped bordered hover>
+      <Table striped>
         <thead>
           <tr>
             <th>Status</th>
