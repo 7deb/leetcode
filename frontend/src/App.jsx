@@ -1,35 +1,12 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import NavBar from '../components/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Courses from '../components/Courses';
-import StudyPlan from '../components/StudyPlan';
-import TopicList from '../components/TopicList';
-import Calender from '../components/Calender';
-import TopicList2 from '../components/TopicList2';
-import ProblemList from '../components/ProblemList';
+import React from 'react'
+import Problems from '../pages/Problems'
 
 const App = () => {
   return (
     <div>
-      <NavBar/>
-      <Container className="text-center" style={{ margin : '0 13%'}}>
-      <Row>
-        <Col xs={8}>
-          <Courses/>
-          <StudyPlan/>
-          <TopicList/>
-          <TopicList2/>
-          <ProblemList/>
-        </Col>
-        <Col xs={4}>
-          <Calender/>        
-        </Col>
-      </Row>
-    </Container>
-        
+      <Problems/>
     </div>
   )
 }
 
-export default App;
+export default App

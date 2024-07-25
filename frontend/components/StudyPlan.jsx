@@ -17,7 +17,7 @@ const StudyPlan = () => {
         <Card className='sp-card-container'>
           <Row className="g-0">
             <Col md={4}>
-              <Card.Img src="./images/dp.png" className="img-fluid rounded-start sp-card-img" alt="..." />
+              <Card.Img src="./images/ti150.png" className="img-fluid rounded-start sp-card-img" alt="..." />
             </Col>
             <Col md={8}>
               <Card.Body className="card-oak">
@@ -31,7 +31,7 @@ const StudyPlan = () => {
         <Card className='sp-card-container'>
           <Row className="g-0">
             <Col md={4}>
-              <Card.Img src="./images/dp.png" className="img-fluid rounded-start sp-card-img" alt="..." />
+              <Card.Img src="./images/lc75.png" className="img-fluid rounded-start sp-card-img" alt="..." />
             </Col>
             <Col md={8}>
               <Card.Body className="card-oak">
@@ -45,7 +45,7 @@ const StudyPlan = () => {
         <Card className='sp-card-container'>
           <Row className="g-0">
             <Col md={4}>
-              <Card.Img src="./images/dp.png" className="img-fluid rounded-start sp-card-img" alt="..." />
+              <Card.Img src="./images/sql50.png" className="img-fluid rounded-start sp-card-img" alt="..." />
             </Col>
             <Col md={8}>
               <Card.Body className="card-oak">
@@ -59,7 +59,7 @@ const StudyPlan = () => {
         <Card className='sp-card-container'>
           <Row className="g-0">
             <Col md={4}>
-              <Card.Img src="./images/dp.png" className="img-fluid rounded-start sp-card-img" alt="..." />
+              <Card.Img src="./images/itp.png" className="img-fluid rounded-start sp-card-img" alt="..." />
             </Col>
             <Col md={8}>
               <Card.Body className="card-oak">
@@ -73,7 +73,7 @@ const StudyPlan = () => {
         <Card className='sp-card-container'>
           <Row className="g-0">
             <Col md={4}>
-              <Card.Img src="./images/dp.png" className="img-fluid rounded-start sp-card-img" alt="..." />
+              <Card.Img src="./images/30dojs.png" className="img-fluid rounded-start sp-card-img" alt="..." />
             </Col>
             <Col md={8}>
               <Card.Body className="card-oak">
@@ -87,7 +87,7 @@ const StudyPlan = () => {
         <Card className='sp-card-container'>
           <Row className="g-0">
             <Col md={4}>
-              <Card.Img src="./images/dp.png" className="img-fluid rounded-start sp-card-img" alt="..." />
+              <Card.Img src="./images/as23hf.png" className="img-fluid rounded-start sp-card-img" alt="..." />
             </Col>
             <Col md={8}>
               <Card.Body className="card-oak">

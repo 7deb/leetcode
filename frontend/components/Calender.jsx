@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Calender.css';
+import streak from '../DS/streak';
+
 
 const Calender = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
@@ -11,6 +13,11 @@ const Calender = () => {
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
+
+  const formatDate = (day, month, year) => {
+    // Convert to dd-mm-yy format
+    return `${day.toString().padStart(2, '0')}-${(month + 1).toString().padStart(2, '0')}-${year.toString().slice(-2)}`;
+  };
 
   const renderCalendar = (month, year) => {
     const firstDayOfMonth = new Date(year, month, 1).getDay();
@@ -22,11 +29,18 @@ const Calender = () => {
     }
 
     for (let i = 1; i <= lastDateOfMonth; i++) {
+      const dateStr = formatDate(i, month, year);
+      const hasStreak = streak.includes(dateStr);
+
+      // Debugging information
+      console.log(`Date: ${dateStr}, Has Streak: ${hasStreak}`);
+
       const today = new Date();
       const isToday =
         i === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+        
       calendarDates.push(
-        <span key={i} className={isToday ? 'today' : ''}>
+        <span key={i} className={`calendar-date ${hasStreak ? 'streak' : ''} ${isToday ? 'today' : ''}`}>
           {i}
         </span>
       );
@@ -60,7 +74,7 @@ const Calender = () => {
   }, [currentMonth, currentYear]);
 
   return (
-    <Container className="calender-premium-sp mt-4">
+    <div className="calender-premium-sp mt-4">
       <div className="calendar-container">
         <div className="calendar-header">
           <Button variant="light" id="prev" aria-label="Prev" onClick={handlePrevMonth}>
@@ -82,7 +96,7 @@ const Calender = () => {
           </div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
