@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button, ButtonGroup, Form } from 'react-bootstrap';
 import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons';
+import '../styles/PaginationControls.css';
 
 const PaginationControls = ({ currentPage, totalPages, onPageChange, itemsPerPage, onItemsPerPageChange }) => {
   return (
     <div className="d-flex justify-content-between align-items-center mt-4">
       {/* Items per Page Selector */}
-      <Form.Group className="mb-0">
+      <Form.Group className="mb-0 form">
         <Form.Control
           as="select"
           value={itemsPerPage}
