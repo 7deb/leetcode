@@ -1,0 +1,30 @@
+.filter-buttons-container {
+    background-color: none;
+    padding: 10px; 
+    border-radius: 5px; 
+    color: white;
+  }
+  .filter-buttons-container *{
+    color: white;
+  }
+  
+  .filter-button {
+    background-color: #3A3A3A; 
+    border: none;
+    opacity: 0.7;
+  }
+  
+  .filter-button:hover {
+    background-color: #3A3A3A;
+    opacity: 1;
+  }
+  
+  .filter-input {
+    background-color: #3A3A3A;
+    color: #000;
+    border: none;
+  }
+  .filter-input::placeholder {
+    color: white;
+    opacity: 0.7;
+  }

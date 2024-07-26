@@ -1,21 +1,21 @@
 import React from 'react';
 import { Button, ButtonGroup, Form } from 'react-bootstrap';
-import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons'; // Or use any icon library you prefer
+import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons';
 
 const PaginationControls = ({ currentPage, totalPages, onPageChange, itemsPerPage, onItemsPerPageChange }) => {
   return (
     <div className="d-flex justify-content-between align-items-center mt-4">
       {/* Items per Page Selector */}
-      <Form.Group className="mb-0"> 
+      <Form.Group className="mb-0">
         <Form.Control
           as="select"
           value={itemsPerPage}
           onChange={(e) => onItemsPerPageChange(parseInt(e.target.value, 10))}
           className="form-select-sm"
         >
-          <option value={10}>20 / page</option>
-          <option value={20}>50  / page</option>
-          <option value={50}>100  / page</option>
+          <option value={20}>20 / page</option>
+          <option value={50}>50 / page</option>
+          <option value={100}>100 / page</option>
         </Form.Control>
       </Form.Group>
 

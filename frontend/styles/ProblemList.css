@@ -20,4 +20,17 @@
 .table *{
     border: none;
 }
+/* ProblemList.css */
+
+.table tbody tr td.difficulty-easy {
+    color: #05ff3f; /* Light green */
+  }
+  
+  .table tbody tr td.difficulty-medium {
+    color: #ffc505; /* Light yellow */
+  }
+  
+  .table tbody tr td.difficulty-hard {
+    color: #ff0015; /* Light red */
+  }
   
