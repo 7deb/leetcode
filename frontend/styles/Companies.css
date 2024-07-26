@@ -1,0 +1,65 @@
+.trending-companies{
+    background-color: #282828;
+    border-radius: 10px;
+    width: 61%;
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+.company-search{
+    width: 90%;
+    height: 25px;
+    font-size: 0.7rem;
+    background-color: #3E3E3E;
+    border: none;
+}
+.company-search::placeholder{
+    color: white;
+    opacity: 0.7;
+}
+.trending-companies-header{
+    color: white;
+}
+.tc-h-header{
+    display: flex;
+    flex-direction: row;
+    margin: 0 5%;
+}
+.tc-h-header span{
+    opacity: 0.7;
+    margin-top: 10px;
+}
+.left-right-btns *{
+    background-color: #3E3E3E;
+    border-radius: 5px;
+    margin: 0 3px;;
+    padding: 3px;
+    opacity: 0.7;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.trending-companies-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5%;
+}
+.trending-companies-list a{
+    text-decoration: none;
+}
+.company-div{
+    background-color: #3E3E3E;
+    margin: 5px;
+    padding: 2px 7px;
+    border-radius: 20px;
+}
+.company-name{
+    color: white;
+    opacity: 0.7;
+}
+.company-no{
+    color: black;
+    background-color: #FFA116;
+    border-radius: 20px;
+    padding: 0 5px;
+    margin-left: 5px;
+}

@@ -1,13 +1,12 @@
-import React from 'react';
-import NavBar from '../components/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+import Problems from '../pages/Problems'
 
 const App = () => {
   return (
     <div>
-      <NavBar/>
+      <Problems/>
     </div>
   )
 }
 
-export default App;
+export default App
