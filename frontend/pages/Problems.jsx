@@ -9,6 +9,7 @@ import Calender from '../components/Calender';
 import TopicList2 from '../components/TopicList2';
 import ProblemList from '../components/ProblemList';
 import Companies from '../components/Companies';
+import Footer from '../components/Footer';
 
 const Problems = () => {
   return (
@@ -29,6 +30,7 @@ const Problems = () => {
         </Col>
       </Row>
     </Container>
+    <Footer/>
         
     </div>
   )
