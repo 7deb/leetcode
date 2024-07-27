@@ -3,9 +3,8 @@ const User = require('../models/userModel');
 
 const createSubmission = async (req, res) => {
   try {
-    // const isCorrect = Math.random() > 0.5 ? 'correct' : 'wrong';
-    const value = 0.6;
-    const isCorrect = value>0.5 ? 'correct':'wrong';
+    const isCorrect = Math.random() > 0.5 ? 'correct' : 'wrong';
+    
 
     const submission = new Submission({
       userId: req.user._id,
