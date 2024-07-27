@@ -68,9 +68,10 @@ const login = async (req, res) => {
             return res.status(400).json({error:"passwords do not match!!"});
         }
 
+        generateToken(existinguser._id,res);
         return res.status(201).json({
             _id: existinguser._id,
-            username: existinguser.userName,
+            username: existinguser.username,
         })
     }catch(error){
         console.log("Error in login controller", error.message);
