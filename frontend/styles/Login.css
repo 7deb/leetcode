@@ -1,0 +1,27 @@
+.login-container {
+  margin-top: 50px;
+}
+
+.login-form-outer {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-logo img {
+  height: 50px;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
