@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes');
 const problemRoutes = require('./routes/problemRoutes');
 const submissionRoutes = require('./routes/submissionRoutes');
+const discussionRoutes = require('./routes/discussionRoutes');
 const databaseConnect = require('./database/db');
 require('dotenv').config();
 
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use('/api/auth', authRoutes);
 app.use('/api/problems', problemRoutes); 
 app.use('/api/submissions', submissionRoutes);
+app.use('/api/discussions', discussionRoutes);
 
 databaseConnect();
 app.listen(PORT, () => {
