@@ -28,14 +28,12 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav className="ms-auto mb-2 mb-lg-0">
-          // routing to login and signup
             {/* <NavLink to="/login" className="nav-link">
               <i className="fa-regular fa-bell"></i>
             </NavLink>
             <NavLink to="/signup" className="nav-link">
               <i className="fa-solid fa-fire"></i>
             </NavLink> */}
-          // baki ka code is your part
             <Nav.Link href="#" className='nav-link'>
               <i className="fa-regular fa-bell"></i>
             </Nav.Link>

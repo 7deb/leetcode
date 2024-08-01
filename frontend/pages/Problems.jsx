@@ -14,7 +14,6 @@ import Footer from '../components/Footer';
 const Problems = () => {
   return (
     <div>
-      <NavBar/>
       <Container className="text-center">
       <Row>
         <Col xs={8}>
@@ -30,7 +29,6 @@ const Problems = () => {
         </Col>
       </Row>
     </Container>
-    <Footer/>
         
     </div>
   )

@@ -1,27 +1,26 @@
-.login-container {
-  margin-top: 50px;
-}
 
-.login-form-outer {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.sign-in-section {
   background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin-top: 100px;
+  max-width: 350px;
 }
-
-.login-logo {
+.leetcode-login-header{
   text-align: center;
-  margin-bottom: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
 }
-
-.login-logo img {
-  height: 50px;
+.logo {
+  width: 100px; /* Adjust logo size as needed */
 }
-
-.mt-3 {
-  margin-top: 1rem !important;
+.a-and-span *{
+  text-decoration: none;
+  color: #546e7a;
 }
-
-.w-100 {
-  width: 100% !important;
+#sign-in{
+  background-color: #697980;
+}
+.btn-link {
+  color: #007bff; /* Adjust button link color */
 }
