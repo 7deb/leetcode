@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Signup from '../components/Signup';
 import Login from '../components/Login';
-import Footer from '../components/Footer';
-import Problems from '../pages/Problems';
 
 const App = () => {
   return (
@@ -13,9 +11,9 @@ const App = () => {
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/problemset" element={<Problems />} />
+        {/* Add a default route */}
+        <Route path="/" element={<Login />} />
       </Routes>
-      <Footer/>
     </Router>
   );
 }
