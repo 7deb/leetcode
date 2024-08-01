@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/NavBar.css';
 
@@ -13,10 +14,10 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbarSupportedContent" />
         <Navbar.Collapse id="navbarSupportedContent">
           <Nav className="me-auto mb-2 mb-lg-0">
-            <Nav.Link href="#"  className='nav-link'>Explore</Nav.Link>
+            <Nav.Link href="#" className='nav-link'>Explore</Nav.Link>
             <Nav.Link href="#" className='nav-link' id='active'>Problems</Nav.Link>
-            <Nav.Link href="#"  className='nav-link'>Contest</Nav.Link>
-            <Nav.Link href="#"  className='nav-link'>Discuss</Nav.Link>
+            <Nav.Link href="#" className='nav-link'>Contest</Nav.Link>
+            <Nav.Link href="#" className='nav-link'>Discuss</Nav.Link>
             <NavDropdown title="Interview" id="navbarScrollingDropdown" className='interview'>
               <NavDropdown.Item href="#">Online Interview</NavDropdown.Item>
               <NavDropdown.Item href="#">Assessment</NavDropdown.Item>
@@ -27,14 +28,22 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav className="ms-auto mb-2 mb-lg-0">
-            <Nav.Link href="#"  className='nav-link'>
+          // routing to login and signup
+            {/* <NavLink to="/login" className="nav-link">
+              <i className="fa-regular fa-bell"></i>
+            </NavLink>
+            <NavLink to="/signup" className="nav-link">
+              <i className="fa-solid fa-fire"></i>
+            </NavLink> */}
+          // baki ka code is your part
+            <Nav.Link href="#" className='nav-link'>
               <i className="fa-regular fa-bell"></i>
             </Nav.Link>
             <Nav.Link href="#" className='nav-link'>
               <i className="fa-solid fa-fire"></i>
             </Nav.Link>
             <Nav.Link href="#">
-              <img src="./images/dp.png" alt="" height="25px" width="25px" id='profile-pic'/>
+              <img src="./images/dp.png" alt="" height="25px" width="25px" id='profile-pic' />
             </Nav.Link>
             <Nav.Link href="#" className='premium'>Premium</Nav.Link>
           </Nav>
