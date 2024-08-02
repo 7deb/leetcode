@@ -1,0 +1,77 @@
+.sign-up-section {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    padding: 2% 2%;
+    margin-top: 100px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leetcode-signup-header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .logo {
+    width: 100px; /* Adjust logo size as needed */
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+  }
+  
+  #sign-up {
+    background-color: #697980;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #sign-up:hover {
+    background-color: #546e7a;
+  }
+  
+  .btn-link {
+    color: #007bff; /* Adjust button link color */
+  }
+  
+  .other-login-options {
+    width: 70%;
+  }
+  
+  .other-login-options a {
+    margin: auto;
+    color: #bdbdbd;
+    font-size: 1.5rem; /* Increase icon size */
+    transition: color 0.3s ease;
+  }
+  
+  .other-login-options .google:hover {
+    color: red;
+  }
+  
+  .other-login-options .github:hover {
+    color: black;
+  }
+  
+  .other-login-options .facebook:hover {
+    color: blue;
+  }
+  
+  .other-login-options-prime {
+    color: #bdbdbd;
+    font-size: 0.9rem; /* Slightly smaller text for a more subtle look */
+  }
+  
+  .sign-in-link {
+    color: #546e7a;
+    text-decoration: none;
+  }
+  
+  .sign-in-link a {
+    color: #546e7a;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  
