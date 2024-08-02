@@ -28,20 +28,14 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav className="ms-auto mb-2 mb-lg-0">
-            {/* <NavLink to="/login" className="nav-link">
+            <NavLink to="/login" className="nav-link">
               <i className="fa-regular fa-bell"></i>
             </NavLink>
             <NavLink to="/signup" className="nav-link">
               <i className="fa-solid fa-fire"></i>
-            </NavLink> */}
-            <Nav.Link href="#" className='nav-link'>
-              <i className="fa-regular fa-bell"></i>
-            </Nav.Link>
-            <Nav.Link href="#" className='nav-link'>
-              <i className="fa-solid fa-fire"></i>
-            </Nav.Link>
+            </NavLink>
             <Nav.Link href="#">
-              <img src="./images/dp.png" alt="" height="25px" width="25px" id='profile-pic' />
+              <img src="./images/dp.png" alt="" height="25px" width="25px" id='profile-pic'/>
             </Nav.Link>
             <Nav.Link href="#" className='premium'>Premium</Nav.Link>
           </Nav>
