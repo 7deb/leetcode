@@ -1,46 +1,65 @@
-
 .sign-in-section {
   background-color: #fff;
   border-radius: 5px;
   width: 90%;
-  padding: 0 1%;
+  padding: 2% 5%;
   margin-top: 100px;
   max-width: 350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.leetcode-login-header{
+
+.leetcode-login-header {
   text-align: center;
   padding: 20px;
-  border-bottom: 1px solid #ddd;
 }
+
 .logo {
   width: 100px; /* Adjust logo size as needed */
 }
-.a-and-span *{
+
+.a-and-span * {
   text-decoration: none;
   color: #546e7a;
 }
-#sign-in{
+
+#sign-in {
   background-color: #697980;
+  border: none;
+  transition: background-color 0.3s ease;
 }
+
+#sign-in:hover {
+  background-color: #546e7a;
+}
+
 .btn-link {
   color: #007bff; /* Adjust button link color */
 }
-.other-login-options{
+
+.other-login-options {
   width: 70%;
 }
-.other-login-options a{
+
+.other-login-options a {
   margin: auto;
   color: #bdbdbd;
+  font-size: 1.5rem; /* Increase icon size */
+  transition: color 0.3s ease;
 }
-.other-login-options .google:hover{
+
+.other-login-options .google:hover {
   color: red;
 }
-.other-login-options .github:hover{
+
+.other-login-options .github:hover {
   color: black;
 }
-.other-login-options .facebook:hover{
+
+.other-login-options .facebook:hover {
   color: blue;
 }
-.other-login-options-prime{
+
+.other-login-options-prime {
   color: #bdbdbd;
+  font-size: 0.9rem; /* Slightly smaller text for a more subtle look */
 }
