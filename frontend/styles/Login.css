@@ -24,3 +24,22 @@
 .btn-link {
   color: #007bff; /* Adjust button link color */
 }
+.other-login-options{
+  width: 70%;
+}
+.other-login-options a{
+  margin: auto;
+  color: #bdbdbd;
+}
+.other-login-options .google:hover{
+  color: red;
+}
+.other-login-options .github:hover{
+  color: black;
+}
+.other-login-options .facebook:hover{
+  color: blue;
+}
+.other-login-options-prime{
+  color: #bdbdbd;
+}
