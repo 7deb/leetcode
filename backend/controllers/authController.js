@@ -49,29 +49,31 @@ const signup = async (req, res) => {
     }
 }
 
-
 const login = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { emailOrUsername, password } = req.body;
 
-        if (!email || !password) {
-            return res.status(400).json({ error: "all fields are required!!" });
+        // Validate input
+        if (!emailOrUsername || !password) {
+            return res.status(400).json({ error: "All fields are required!" });
         }
 
-        const existinguser = await user.findOne({ email });
-        if (!existinguser) {
-            return res.status(400).json({ error: "user does not exist" });
-        }
+        // Determine if input is an email
+        const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailOrUsername);
+        
+        // Find user by email or username
+        let userQuery = isEmail ? { email: emailOrUsername } : { username: emailOrUsername };
+        const existingUser = await user.findOne(userQuery);
 
-        const comparePassword = await bcrypt.compare(password,existinguser.password);
+        const comparePassword = await bcrypt.compare(password,existingUser.password);
         if(!comparePassword){
             return res.status(400).json({error:"passwords do not match!!"});
         }
 
-        generateToken(existinguser._id,res);
+        generateToken(existingUser._id,res);
         return res.status(201).json({
-            _id: existinguser._id,
-            username: existinguser.username,
+            _id: existingUser._id,
+            username: existingUser.username,
         })
     }catch(error){
         console.log("Error in login controller", error.message);

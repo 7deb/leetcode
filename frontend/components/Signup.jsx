@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Form, Button, Image, InputGroup } from 'react-bootstrap';
 import { FaEye, FaGoogle, FaGithub, FaFacebook } from 'react-icons/fa';
 import '../styles/Signup.css';
+import useSignup from '../hooks/useSignup';
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -12,6 +13,14 @@ const Signup = () => {
   const [showPassword2, setShowPassword2] = useState(false);
   const [errors, setErrors] = useState({});
 
+  const { loading, errors: signupErrors, signup } = useSignup();
+
+  useEffect(() => {
+    if (signupErrors) {
+      setErrors(signupErrors);
+    }
+  }, [signupErrors]);
+
   const togglePasswordVisibility1 = () => {
     setShowPassword1(!showPassword1);
   };
@@ -20,9 +29,11 @@ const Signup = () => {
     setShowPassword2(!showPassword2);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form validation and submission logic here
+    if(await signup({ username, email, password: password1, confirmPassword: password2 })){
+      console.log("Form submitted");
+    }
   };
 
   return (
@@ -57,7 +68,7 @@ const Signup = () => {
                 <FaEye />
               </Button>
             </InputGroup>
-            {errors.password1 && <p className="error-message">{errors.password1}</p>}
+            {errors.password && <p className="error-message">{errors.password}</p>}
           </Form.Group>
           <Form.Group controlId="formPassword2" className="position-relative">
             <InputGroup>
@@ -73,7 +84,7 @@ const Signup = () => {
                 <FaEye />
               </Button>
             </InputGroup>
-            {errors.password2 && <p className="error-message">{errors.password2}</p>}
+            {errors.confirmPassword && <p className="error-message">{errors.confirmPassword}</p>}
           </Form.Group>
           <Form.Group controlId="formEmail">
             <Form.Control 
@@ -86,20 +97,24 @@ const Signup = () => {
             />
             {errors.email && <p className="error-message">{errors.email}</p>}
           </Form.Group>
-          <Button variant="primary" type="submit" className="w-100 mb-3" id="sign-up">Sign Up</Button>
+          <Button variant="primary" type="submit" className="w-100 mb-3" id="sign-up" disabled={loading}>
+            {loading ? 'Signing Up...' : 'Sign Up'}
+          </Button>
+          {errors.server && <p className="error-message">{errors.server}</p>}
         </Form>
         <div className="d-flex justify-content-between sign-in-link">
           <p>Have an account?</p>
-          <a href="/login">Sign In</a>
+          <a href="/login">Login </a>
         </div>
         <div className="my-4 text-center other-login-options-prime">
           <p>or you can sign in with</p>
           <center>
-          <div className="d-flex justify-content-center other-login-options">
-            <a href="https://leetcode.com/accounts/google/login/?next=%2F" className="google"><FaGoogle /></a>
-            <a href="https://leetcode.com/accounts/github/login/?next=%2F" className="github"><FaGithub /></a>
-            <a href="https://leetcode.com/accounts/facebook/login/?next=%2F" className="facebook"><FaFacebook /></a>
-          </div></center>
+            <div className="d-flex justify-content-center other-login-options">
+              <a href="https://leetcode.com/accounts/google/login/?next=%2F" className="google"><FaGoogle /></a>
+              <a href="https://leetcode.com/accounts/github/login/?next=%2F" className="github"><FaGithub /></a>
+              <a href="https://leetcode.com/accounts/facebook/login/?next=%2F" className="facebook"><FaFacebook /></a>
+            </div>
+          </center>
         </div>
       </div>
     </Container>

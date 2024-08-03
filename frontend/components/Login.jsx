@@ -18,8 +18,9 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(""); // Clear previous error messages
     try {
-      await login(username, password);
+      await login({ emailOrUsername: username, password });
     } catch (error) {
       setError("Invalid username or password");
     }
@@ -33,28 +34,28 @@ const LoginPage = () => {
         </div>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formUsername">
-            <Form.Control 
-              type="text" 
-              placeholder="Username or E-mail" 
-              autoComplete="username" 
-              className='mb-4' 
+            <Form.Control
+              type="text"
+              placeholder="Username or E-mail"
+              autoComplete="username"
+              className='mb-4'
               value={username}
-              onChange={(e) => setUsername(e.target.value)} 
+              onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
           <Form.Group controlId="formPassword" className="position-relative">
-            <Form.Control 
-              type={showPassword ? "text" : "password"} 
-              placeholder="Password" 
-              autoComplete="current-password" 
-              className='mb-4' 
+            <Form.Control
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              autoComplete="current-password"
+              className='mb-4'
               value={password}
-              onChange={(e) => setPassword(e.target.value)} 
+              onChange={(e) => setPassword(e.target.value)}
               aria-label="Password"
             />
-            <Button 
-              variant="link" 
-              onClick={togglePasswordVisibility} 
+            <Button
+              variant="link"
+              onClick={togglePasswordVisibility}
               className="position-absolute top-50 end-0 translate-middle-y"
               aria-label="Toggle Password Visibility"
             >
@@ -62,11 +63,11 @@ const LoginPage = () => {
             </Button>
           </Form.Group>
           {error && <div className="text-danger mb-3">{error}</div>}
-          <Button 
-            variant="primary" 
-            type="submit" 
-            className="w-100 mb-3" 
-            id='sign-in' 
+          <Button
+            variant="primary"
+            type="submit"
+            className="w-100 mb-3"
+            id='sign-in'
             disabled={loading}
           >
             {loading ? "Signing In..." : "Sign In"}
