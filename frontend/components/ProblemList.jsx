@@ -29,9 +29,20 @@ const ProblemList = () => {
     setCurrentPage(1); // Reset to first page on items per page change
   };
 
+  const difficultyOrder = {
+    Easy: 1,
+    Medium: 2,
+    Hard: 3,
+  };
+
   const sortedProblems = [...Problems].sort((a, b) => {
+    if (sortField === 'difficulty') {
+      const order = difficultyOrder[a[sortField]] - difficultyOrder[b[sortField]];
+      return sortOrder === 'asc' ? order : -order;
+    }
+
     if (sortField === 'title') {
-        return sortOrder === 'asc' ? a.id - b.id : b.id - a.id;
+      return sortOrder === 'asc' ? a.id - b.id : b.id - a.id;
     }
 
     if (a[sortField] < b[sortField]) return sortOrder === 'asc' ? -1 : 1;
