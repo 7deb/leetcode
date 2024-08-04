@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import Signup from '../components/Signup';
 import Login from '../components/Login';
 import Footer from '../components/Footer';
+import Home from '../pages/Home';
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         {/* Add a default route */}
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
       </Routes>
       <Footer/>
     </Router>
