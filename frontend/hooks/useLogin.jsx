@@ -1,45 +1,49 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useAuthContext } from "../context/AuthContext";
 
 const useLogin = () => {
     const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState({});
+    const {setAuthUser} = useAuthContext();
 
-    const login = async (username, password) => {
-        const success = handleInputErrors({ username, password });
+
+    const login = async ({ emailOrUsername, password }) => {
+        const success = handleInputErrors({ emailOrUsername, password });
         if (!success) return;
+
         setLoading(true);
+        setErrors({});
         try {
             const res = await fetch("http://localhost:4000/api/auth/login", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username, password }),
+                headers: { "Content-type": "application/json" },
+                body: JSON.stringify({ emailOrUsername, password })
             });
-
-            if (!res.ok) {
-                const errorData = await res.json();
-                throw new Error(errorData.error || "Login failed");
-            }
-
             const data = await res.json();
-            console.log(data);
-            localStorage.setItem("chat-app", JSON.stringify(data));
-            // Assuming setAuthUser is defined somewhere to set the authenticated user
-            // setAuthUser(data);
+            if (res.ok) {
+                // Handle successful login
+                localStorage.setItem("Leetcode",JSON.stringify(data ));
+                setAuthUser(data);
+            } else {
+                setErrors({ message: data.error });
+            }
         } catch (error) {
-            toast.error(error.message);
+            console.error("Error during login:", error);
+            setErrors({ message: "An unexpected error occurred" });
         } finally {
             setLoading(false);
         }
     };
 
-    return { loading, login };
+    return { loading, errors, login };
 };
 
 export default useLogin;
 
-function handleInputErrors({ username, password }) {
-    if (!username || !password) {
-        toast.error("Please fill in all the fields");
+function handleInputErrors({ emailOrUsername, password }) {
+    if (!emailOrUsername || !password) {
+        toast.error("All fields are necessary");
         return false;
     }
     return true;
