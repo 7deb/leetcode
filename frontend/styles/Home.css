@@ -35,7 +35,7 @@
   }
   
   .explore-section {
-    background-color: #f8f9fa;
+    background-color: #fff;
     text-align: right;
     padding: 50px 15%;
   }
@@ -125,4 +125,31 @@
     100% {
       transform: translate(0px, -12px);
     }
+  }
+
+  .qc4-section {
+    background-color: #F7F9FC;
+    text-align: left;
+    padding: 50px 15%;
+  }
+  .qc4-section-inner{
+    padding: 0 50px;
+  }
+  
+  .qc4-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1da09c;
+  }
+  
+  .qc4-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: #7F7F7F;
+  }
+  
+  .qc4-button {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #31CFF1;
   }
