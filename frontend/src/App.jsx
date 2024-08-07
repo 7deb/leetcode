@@ -19,21 +19,12 @@ const App = () => {
           <Route path='/' element={authUser ? <ProblemList/> : <Navigate to={"/login"} />} />
           <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
           <Route path='/signup' element={authUser ? <Navigate to='/' /> : <Signup />} />
+          <Route path="/" element={<Home />} />
         </Routes>
         <Footer />
       </Router>
       <Toaster />
     </div>
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        {/* Add a default route */}
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer/>
-    </Router>
   );
 }
 
