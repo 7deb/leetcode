@@ -1,0 +1,128 @@
+/* App.css */
+.hero-section {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 50px 15%;    
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #7F7F7F;
+  }
+  
+  .hero-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #1da09c;
+    border-radius: 25px;
+  }
+  
+  .hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-image {
+    max-width: 420px;
+    height: auto;
+  }
+  
+  .explore-section {
+    background-color: #f8f9fa;
+    text-align: right;
+    padding: 50px 15%;
+  }
+  
+  .explore-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1da09c;
+  }
+  
+  .explore-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: #7F7F7F;
+  }
+  
+  .explore-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #31CFF1;
+  }
+  
+  .cards {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:center;
+  }  
+  .cards-1, 
+  .cards-2,
+  .cards-3{
+    cursor:pointer;
+    animation-direction:alternate;
+    transition-timing-function: ease-in-out;
+  }
+  .cards img{
+    width: 400px;
+    height: auto;
+  }
+  
+  .cards-1 {
+    transform: translate(0px, 5px);
+    animation: one 3s infinite;
+  }
+  .cards-2 {
+    position: relative;
+    left: -370px;
+    transform: translate(0px, 12px);
+    animation: two 3s infinite;
+  }
+  .cards-3 {
+    position: relative;
+    left: -740px;
+    transform: translate(0px, 20px);
+    animation: three 3s infinite;
+  }
+  @keyframes one {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(0px, 5px);
+    }
+    100% {
+      transform: translate(0px, -5px);
+    }
+  }
+  @keyframes three {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(0px, 30px);
+    }
+    100% {
+      transform: translate(0px, -30px);
+    }
+  }
+  @keyframes two {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(0px, 12px);
+    }
+    100% {
+      transform: translate(0px, -12px);
+    }
+  }
