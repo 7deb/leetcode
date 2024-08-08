@@ -137,13 +137,13 @@
   }
   
   .qc4-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
     color: #1da09c;
   }
   
   .qc4-subtitle {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 30px;
     color: #7F7F7F;
   }
@@ -153,3 +153,88 @@
     text-decoration: none;
     color: #31CFF1;
   }
+  
+  .devmade-section {
+    background-color: #F7F9FC;
+    text-align: left;
+    padding: 50px 30%;
+  }
+  .devmade-section-inner{
+    padding: 0 50px;
+  }
+  
+  .devmade-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1da09c;
+  }
+  
+  .devmade-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #7F7F7F;
+  }
+  
+  .devmade-button {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #31CFF1;
+  }
+  .inner {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.logo {
+  text-align: center;
+  display: inline-block;
+  margin: 20px;
+}
+.company-logo{
+  height: 40px;
+  filter: brightness(0%);
+  opacity: 0.2;
+}
+.facebook {
+  height: 50px;
+}
+.apple {
+  height: 35px;
+}
+.uber {
+  height: 15px;
+}
+.jet {
+  height: 25px;
+}
+
+.amazon {
+  height: 28px;
+}
+.bank-of-america {
+  height: 25px;
+}
+.pinterest {
+  height: 25px;
+}
+.stripe {
+  height: 28px;
+}
+
+.logo-section {
+  background-color: #F7F9FC;
+  text-align: left;
+  padding: 50px 20%;
+}
+.logo-section-inner{
+  padding: 0 50px;
+}
