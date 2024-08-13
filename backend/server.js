@@ -6,6 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const problemRoutes = require('./routes/problemRoutes');
 const submissionRoutes = require('./routes/submissionRoutes');
 const discussionRoutes = require('./routes/discussionRoutes');
+const compilerRoutes = require('./routes/compilerRoutes'); // Add this
 const databaseConnect = require('./database/db');
 require('dotenv').config();
 
@@ -20,6 +21,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/problems', problemRoutes); 
 app.use('/api/submissions', submissionRoutes);
 app.use('/api/discussions', discussionRoutes);
+app.use('/api/compiler', compilerRoutes); // Add this
 
 databaseConnect();
 app.listen(PORT, () => {
