@@ -1,0 +1,20 @@
+.problem-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .problem-details {
+    width: 40%;
+  }
+  
+  .code-editor {
+    width: 55%;
+  }
+  
+  pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
