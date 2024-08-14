@@ -32,8 +32,6 @@ const Calender = () => {
       const dateStr = formatDate(i, month, year);
       const hasStreak = streak.includes(dateStr);
 
-      // Debugging information
-      console.log(`Date: ${dateStr}, Has Streak: ${hasStreak}`);
 
       const today = new Date();
       const isToday =

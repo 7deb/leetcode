@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import ProblemList from '../components/ProblemList'
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from '../context/AuthContext';
-import ProblemPage from '../components/ProblemPage';
+// import ProblemPage from '../components/ProblemPage';
 import Home from '../pages/Home';
 import Explore from '../pages/Explore';
 import Problems from '../pages/Problems';
