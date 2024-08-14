@@ -8,16 +8,15 @@ const NavBar = () => {
   return (
     <Navbar expand="lg" className='navbar'>
       <Container className='container'>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/home">
           <img src="./images/LClogo.png" alt="" height="25px" width="25px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarSupportedContent" />
         <Navbar.Collapse id="navbarSupportedContent">
           <Nav className="me-auto mb-2 mb-lg-0">
-            <Nav.Link href="#" className='nav-link'>Explore</Nav.Link>
-            <Nav.Link href="#" className='nav-link' id='active'>Problems</Nav.Link>
-            <Nav.Link href="#" className='nav-link'>Contest</Nav.Link>
-            <Nav.Link href="#" className='nav-link'>Discuss</Nav.Link>
+            <Nav.Link href="/explore" className='nav-link'>Explore</Nav.Link>
+            <Nav.Link href="/problemset" className='nav-link' id='active'>Problems</Nav.Link>
+            <Nav.Link href="/discuss" className='nav-link'>Discuss</Nav.Link>
             <NavDropdown title="Interview" id="navbarScrollingDropdown" className='interview'>
               <NavDropdown.Item href="#">Online Interview</NavDropdown.Item>
               <NavDropdown.Item href="#">Assessment</NavDropdown.Item>
