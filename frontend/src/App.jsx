@@ -7,8 +7,14 @@ import Footer from '../components/Footer';
 import ProblemList from '../components/ProblemList'
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from '../context/AuthContext';
+<<<<<<< HEAD
+=======
+// import ProblemPage from '../components/ProblemPage';
+>>>>>>> b6e386456baecef7aa8fd920cd73a79c0c0be5c0
 import Home from '../pages/Home';
 import Explore from '../pages/Explore';
+import Problems from '../pages/Problems';
+import Discuss from '../pages/Discuss';
 
 const App = () => {
   const { authUser } = useAuthContext();
@@ -21,7 +27,9 @@ const App = () => {
           <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
           <Route path='/signup' element={authUser ? <Navigate to='/' /> : <Signup />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/explore" element={<Explore />} />
+          <Route path="/explore" element={<Explore/>} />
+          <Route path="/problemset" element={<Problems/>} />
+          <Route path="/discuss" element={<Discuss/>} />
         </Routes>
         <Footer />
       </Router>
