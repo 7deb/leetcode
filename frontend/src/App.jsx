@@ -11,6 +11,7 @@ import Home from '../pages/Home';
 import Explore from '../pages/Explore';
 import Problems from '../pages/Problems';
 import Discuss from '../pages/Discuss';
+import E404 from '../components/E404';
 
 const App = () => {
   const { authUser } = useAuthContext();
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/explore" element={<Explore/>} />
           <Route path="/problemset" element={<Problems/>} />
           <Route path="/discuss" element={<Discuss/>} />
+          <Route path="*" element={<E404/>} />
         </Routes>
         <Footer />
       </Router>
