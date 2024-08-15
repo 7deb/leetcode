@@ -4,10 +4,9 @@ const generateToken = require('../utility/utility');
 
 const signup = async (req, res) => {
     try {
-        // taking user details
+
         const { username, email, password, confirmedPassword } = req.body;
 
-        // checking if all fields are filled 
         if (!username || !email || !password || !confirmedPassword) {
             return res.status(401).json({ error: "all fields are required!!" });
         }
@@ -16,24 +15,20 @@ const signup = async (req, res) => {
             return res.status(401).json({ error: "Passwords do not match!" });
         }
 
-        // checking if user already exists 
         const existingUser = await user.findOne({ username });
         if (existingUser) {
             return res.status(400).json({ error: "User already exists" });
         }
 
-        // hashing the passwords
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        // creating the user data 
         const newUser = await user.create({
             username,
             email,
             password: hashedPassword,
         });
 
-        // creating the user in the database
         if (newUser) {
             generateToken(newUser._id, res);
             return res.status(201).json({
@@ -53,15 +48,12 @@ const login = async (req, res) => {
     try {
         const { emailOrUsername, password } = req.body;
 
-        // Validate input
         if (!emailOrUsername || !password) {
             return res.status(400).json({ error: "All fields are required!" });
         }
 
-        // Determine if input is an email
         const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailOrUsername);
         
-        // Find user by email or username
         let userQuery = isEmail ? { email: emailOrUsername } : { username: emailOrUsername };
         const existingUser = await user.findOne(userQuery);
 

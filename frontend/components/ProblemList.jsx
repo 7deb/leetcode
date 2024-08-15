@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../styles/ProblemList.css';
 import PaginationControls from './PaginationControls';
 import FilterButtons from './FilterButtons';
