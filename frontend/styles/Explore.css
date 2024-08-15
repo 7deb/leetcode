@@ -9,7 +9,7 @@
   }
   
   .custom-card .card-body {
-    background: linear-gradient(135deg, rgba(72, 70, 255, 0.9), rgba(72, 70, 255, 0.6));
+    background: linear-gradient(135deg, #282828, #505050);
     color: white;
   }
   
