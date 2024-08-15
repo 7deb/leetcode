@@ -7,7 +7,6 @@ import Footer from '../components/Footer';
 import ProblemList from '../components/ProblemList'
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from '../context/AuthContext';
-import ProblemPage from '../components/ProblemPage';
 import Home from '../pages/Home';
 import Explore from '../pages/Explore';
 
@@ -19,7 +18,6 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path='/' element={authUser ? <ProblemList /> : <Navigate to={"/login"} />} />
-          <Route path="/problems/:id" element={authUser ? <ProblemPage /> : <Navigate to={"/login"} />} />
           <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
           <Route path='/signup' element={authUser ? <Navigate to='/' /> : <Signup />} />
           <Route path="/home" element={<Home />} />
