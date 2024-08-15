@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DiscussQsDS from '../DS/DiscussQsDS';
 import { Tab, ListGroup, Badge} from 'react-bootstrap';
 import PaginationControls from '../components/PaginationControls';
+import '../styles/DiscussQs.css';
 
 const DiscussQs = () => {
   const [problems, setProblems] = useState([]);
@@ -11,7 +12,7 @@ const DiscussQs = () => {
   const [sortField, setSortField] = useState('title');
   const [sortOrder, setSortOrder] = useState('asc');
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10); // Default to 50 items per page
+  const [itemsPerPage, setItemsPerPage] = useState(10); // Default to 10 items per page
 
   useEffect(() => {
     const fetchProblems = async () => {

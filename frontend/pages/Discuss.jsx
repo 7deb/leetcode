@@ -2,13 +2,14 @@ import React from 'react'
 import { Container, Row, Col, Nav} from 'react-bootstrap';
 import Companies from '../components/Companies';
 import DiscussQs from '../components/DiscussQs';
+import '../styles/Discuss.css';
 
 const Discuss = () => {
 
 
 return (
     <Container fluid>
-        <Row className="mt-3">
+        <Row className="mt-3 justify-content-center">
             <Nav variant="pills justify-content-center">
                 <Nav.Item>
                     <Nav.Link eventKey="interview-question">Interview Question</Nav.Link>
@@ -32,10 +33,10 @@ return (
                     <Nav.Link eventKey="support-feedback">Support & Feedback</Nav.Link>
                 </Nav.Item>
             </Nav>
-            <Col md={9}>
+            <Col md={8}>
                 <DiscussQs/>
             </Col>
-            <Col md={3}>
+            <Col md={4}>
                 <Companies/>
             </Col>
         </Row>

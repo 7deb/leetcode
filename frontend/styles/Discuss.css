@@ -1,0 +1,13 @@
+.col-md-8{
+    margin-left: 12%;
+    width: 52%;
+}
+.nav-pills{
+    width: 73%;
+    
+}
+.nav-pills .nav-item{
+    background-color: #282828;
+    border-radius: 5px;
+    margin: auto;
+}
