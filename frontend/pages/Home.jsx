@@ -34,7 +34,7 @@ const Home = () => {
             <p className="hero-subtitle">
               LeetCode is the best platform to help you enhance your skills, expand your knowledge and prepare for technical interviews.
             </p>
-            <Button variant="success" className="hero-button">Create Account</Button>
+            <Button variant="success" className="hero-button" href='/signup'>Create Account</Button>
           </div>
         </Col>
       </Row>
@@ -44,7 +44,7 @@ const Home = () => {
           <p className="explore-subtitle">
             Explore is a well-organized tool that helps you get the most out of LeetCode by providing structure to guide your progress towards the next step in your programming career.
           </p>
-          <a href='' className='explore-button'>Get Started</a>
+          <a href='/explore' className='explore-button'>Get Started</a>
         </Col>
         <Col md={6} className="explore-images-container cards">
           <img src="../images/c3.png" alt="" className="explore-image cards-1"/>
@@ -60,7 +60,7 @@ const Home = () => {
           <p className="qc4-subtitle">
           Over 3450 questions for you to practice. Come and join one of the largest tech communities with hundreds of thousands of active users and participate in our contests to challenge yourself and earn rewards.
           </p>
-          <a href='' className='qc4-button'>View Questions</a>
+          <a href='/problemset' className='qc4-button'>View Questions</a>
         </Col>
         <Col md={6} className='qc4-section-inner'>
         <img src="../images/cc.png" height={50}/>
@@ -69,7 +69,7 @@ const Home = () => {
           <p className="qc4-subtitle">
           Not only does LeetCode prepare candidates for technical interviews, we also help companies identify top technical talent. From sponsoring contests to providing online assessments and training, we offer numerous services to businesses.
           </p>
-          <a href='' className='qc4-button'>Business Opportunities</a>  
+          <a href='/discuss' className='qc4-button'>Business Opportunities</a>  
         </Col>
       </Row>
       <Row className="devmade-section text-center">
