@@ -47,7 +47,7 @@ async function codeExecute(dockerImage, codeFilepath, fileExtension, input) {
 
         dockerProcess.stderr.on('data', (data) => {
             console.error(`Error from container ${containerName}: ${data.toString()}`);
-            output += data.toString(); 
+            output += data.toString();
         });
 
         dockerProcess.on('close', (code) => {
@@ -70,21 +70,30 @@ const runTestCases = async (code, langauge, testCases) => {
 
     for (const testcase of testCases) {
         try {
-            const output = await codeExecute(dockerImage, filePath, fileExtension, testcase.input);
-            let parsedOutput;
-            try {
-                parsedOutput = JSON.parse(output.trim());
-            } catch (parseError) {
-                // Handle parsing error
-                console.error('Error parsing output:', parseError);
-                parsedOutput = null; // Or handle it differently based on your requirements
+            let output = await codeExecute(dockerImage, filePath, fileExtension, testcase.input);
+
+            if (output) {
+                output = output.toString().trim();
+            } else {
+                output = '';
             }
-            let parsedExpectedOutput = testcase.expectedoutput.trim();
-            const passed = parsedOutput === parsedExpectedOutput;
+
+            let parsedExpectedOutput = testcase.expectedOutput;
+            if (parsedExpectedOutput) {
+                parsedExpectedOutput = parsedExpectedOutput.toString().trim();
+            } else {
+                parsedExpectedOutput = '';
+            }
+            console.log('Input:', testcase.input);
+            console.log('Expected Output:', parsedExpectedOutput);
+            console.log('Actual Output:', output);
+
+
+            const passed = output == parsedExpectedOutput;
             results.push({
                 input: testcase.input,
                 expectedOutput: parsedExpectedOutput,
-                actualOutput: parsedOutput,
+                actualOutput: output,
                 passed: passed
             });
         } catch (error) {
@@ -97,7 +106,7 @@ const runTestCases = async (code, langauge, testCases) => {
     }
     fs.unlinkSync(filePath);
     return results;
-}
+};
 
 module.exports = {
     runTestCases,
