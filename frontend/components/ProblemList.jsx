@@ -1,35 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../styles/ProblemList.css';
 import PaginationControls from './PaginationControls';
 import FilterButtons from './FilterButtons';
+import usefetchProblem from '../hooks/usefetchProblem'; 
 
 const ProblemList = () => {
-  const [problems, setProblems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { problems, loading, error } = usefetchProblem(); 
 
   const [sortField, setSortField] = useState('title');
   const [sortOrder, setSortOrder] = useState('asc');
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(50); // Default to 50 items per page
-
-  useEffect(() => {
-    const fetchProblems = async () => {
-      try {
-        const response = await fetch('http://localhost:4000/api/problems');
-        const data = await response.json();
-        setProblems(data.problems);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProblems();
-  }, []);
+  const [itemsPerPage, setItemsPerPage] = useState(50); 
 
   const handleSort = (field) => {
     if (sortField === field) {
@@ -46,7 +29,7 @@ const ProblemList = () => {
 
   const handleItemsPerPageChange = (items) => {
     setItemsPerPage(items);
-    setCurrentPage(1); // Reset to first page on items per page change
+    setCurrentPage(1); 
   };
 
   const difficultyOrder = {
@@ -74,7 +57,6 @@ const ProblemList = () => {
   const indexOfFirstProblem = indexOfLastProblem - itemsPerPage;
   const currentProblems = sortedProblems.slice(indexOfFirstProblem, indexOfLastProblem);
 
-  // Calculate total pages
   const totalPages = Math.ceil(sortedProblems.length / itemsPerPage);
 
   const getDifficultyClass = (difficulty) => {
@@ -89,6 +71,7 @@ const ProblemList = () => {
         return '';
     }
   };
+
   return (
     <div>
       {loading && <div>Loading...</div>}

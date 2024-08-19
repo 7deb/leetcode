@@ -19,7 +19,8 @@ const App = () => {
     <div>
       <Router>
         <NavBar />
-        <Routes>
+        <CodeEditor/>
+        {/* <Routes>
           <Route path='/' element={authUser ? <Problems /> : <Navigate to={"/login"} />} />
           <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
           <Route path='/signup' element={authUser ? <Navigate to='/' /> : <Signup />} />
@@ -28,7 +29,7 @@ const App = () => {
           <Route path="/problemset" element={<Problems/>} />
           <Route path="/discuss" element={<Discuss/>} />
           <Route path="*" element={<E404/>} />
-        </Routes>
+        </Routes> */}
         <Footer />
       </Router>
       <Toaster />
