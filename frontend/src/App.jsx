@@ -12,6 +12,7 @@ import Explore from '../pages/Explore';
 import Problems from '../pages/Problems';
 import Discuss from '../pages/Discuss';
 import E404 from '../components/E404';
+import CodeEditor from '../components/CodeEditor';
 
 const App = () => {
   const { authUser } = useAuthContext();
@@ -19,8 +20,7 @@ const App = () => {
     <div>
       <Router>
         <NavBar />
-        <CodeEditor/>
-        {/* <Routes>
+        <Routes>
           <Route path='/' element={authUser ? <Problems /> : <Navigate to={"/login"} />} />
           <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
           <Route path='/signup' element={authUser ? <Navigate to='/' /> : <Signup />} />
@@ -28,8 +28,9 @@ const App = () => {
           <Route path="/explore" element={<Explore/>} />
           <Route path="/problemset" element={<Problems/>} />
           <Route path="/discuss" element={<Discuss/>} />
+          <Route path="/problems/:id" element={<CodeEditor/>} />
           <Route path="*" element={<E404/>} />
-        </Routes> */}
+        </Routes>
         <Footer />
       </Router>
       <Toaster />

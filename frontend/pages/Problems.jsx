@@ -20,7 +20,7 @@ const Problems = () => {
           <Courses/>
           <StudyPlan/>
           <TopicList/>
-          <TopicList2/>
+          {/* <TopicList2/> */}
           <ProblemList/>
         </Col>
         <Col xs={4}>

@@ -6,12 +6,16 @@ const CodeEditor = () => {
   const [problem, setProblem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { problemId } = useParams(); // Get problem ID from URL parameter
+  const { id } = useParams(); // Get problem ID from URL parameter
+  console.log(id);
 
   useEffect(() => {
     const fetchProblem = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/problems/${problemId}`);
+        const response = await fetch(`http://localhost:4000/api/problems/${id}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
         setProblem(data.problem);
       } catch (error) {
@@ -22,7 +26,7 @@ const CodeEditor = () => {
     };
 
     fetchProblem();
-  }, [problemId]);
+  }, [id]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -35,10 +39,10 @@ const CodeEditor = () => {
   if (!problem) {
     return <div>Problem not found.</div>;
   }
-
+  
   const { title, difficulty, acceptance, description, exampleIn, exampleOut, testCases } = problem;
 
-  const code = '// Your initial code here'; // Replace with actual solution code (if available)
+  const code = problem?.initialCode || '// Your initial code here';
 
   return (
     <div className="problem-details-container">
@@ -64,10 +68,21 @@ const CodeEditor = () => {
           <pre>{exampleOut}</pre>
         </div>
       </div>
-      <div className="problem-test-cases">
-        <h3>Test Cases</h3>
-        {/* Display test cases dynamically */}
-      </div>
+        <div className="problem-test-cases">
+          <h3>Test Cases</h3>
+          {testCases.length ? (
+            testCases.map((testCase, index) => (
+              <div key={index} className="test-case">
+                <h4>Test Case {index + 1}</h4>
+                <pre>{testCase.input}</pre>
+                <pre>{testCase.expectedOutput}</pre>
+                
+              </div>
+            ))
+          ) : (
+            <p>No test cases available.</p>
+          )}
+        </div>
       <div className="code-editor">
         <Editor
           height="400px"
@@ -75,7 +90,12 @@ const CodeEditor = () => {
           language="javascript"
           theme="vs-dark"
           value={code}
-          // Add other editor options as needed
+          options={{
+            selectOnLineNumbers: true,
+            automaticLayout: true,
+            minimap: { enabled: false },
+            wordWrap: 'on',
+          }}
         />
         {/* Buttons or other elements for code submission and execution */}
       </div>

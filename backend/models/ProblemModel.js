@@ -17,18 +17,23 @@ const problemSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
+        minlength: 5,  // Example constraint
+        maxlength: 100, // Example constraint
     },
     difficulty: {
         type: String,
         required: true,
+        enum: ['easy', 'medium', 'hard'], // Example enum values
     },
     acceptance: { 
         type: String,
         required: true,
+        enum: ['high', 'medium', 'low'], // Example enum values
     },
     description: { 
         type: String,
         required: true,
+        minlength: 10,  // Example constraint
     },
     exampleIn: { 
         type: String,
@@ -40,6 +45,9 @@ const problemSchema = new mongoose.Schema({
     },
     testCases: [testCaseSchema],
 }, { timestamps: true });
+
+// Add index for better performance on commonly queried fields
+problemSchema.index({ title: 1, difficulty: 1 });
 
 const Problem = mongoose.model('Problem', problemSchema);
 

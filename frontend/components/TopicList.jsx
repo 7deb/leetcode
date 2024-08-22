@@ -7,7 +7,7 @@ const TopicList = () => {
     <div>
         <div className="collapsible-topic-bar">
         {Object.entries(topics).map(([topic, count]) => (   
-                    <div>
+                    <div key={topic}>
                         <span>{topic}</span>
                         <div>{count}</div>
                     </div>                
